@@ -1,5 +1,6 @@
 FROM alpine:latest
-MAINTAINER James Li <james_li@skybility.com>
+
+RUN set -eux && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 
 RUN \
   apk --no-cache add \
