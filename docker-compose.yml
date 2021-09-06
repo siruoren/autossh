@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+    autossh:
+      build: .
+      image: 'zhuguojun6/autossh:1.0.0'
+      container_name: "autossh"
+      restart: unless-stopped
+      privileged: true
+      hostname: 'autossh'
+
+      environment:
+        TZ: 'Asia/Shanghai'
+        SSH_HOSTUSER: user
+        SSH_HOSTNAME: host 
+        SSH_HOSTPORT: 22
+      deploy:
+        resources:
+          limits:
+            memory: 512M
+            cpus: 1
+      ports:
+        - '10086:1080'
+
+      volumes:
+        - ./private_keys/id_rsa:/id_rsa
+
