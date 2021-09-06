@@ -7,6 +7,8 @@ if [ ! -f "${KEY_FILE}" ]; then
     exit 1
 fi
 
+
+chmod 600 /id_rsa;
 # If known_hosts is provided, STRICT_HOST_KEY_CHECKING=yes
 # Default CheckHostIP=yes unless SSH_STRICT_HOST_IP_CHECK=false
 STRICT_HOSTS_KEY_CHECKING=no
