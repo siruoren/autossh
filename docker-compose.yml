@@ -13,13 +13,14 @@ services:
         SSH_HOSTUSER: user
         SSH_HOSTNAME: host 
         SSH_HOSTPORT: 22
+        PROXY_HOSTPORT: 10086
       deploy:
         resources:
           limits:
             memory: 512M
             cpus: 1
       ports:
-        - '10086:1080'
+        - '10086:10086'
 
       volumes:
         - ./private_keys/id_rsa:/id_rsa
