@@ -44,7 +44,7 @@ COMMAND="autossh "\
 "-o ServerAliveCountMax=${SERVER_ALIVE_COUNT_MAX:-3} "\
 "-o ExitOnForwardFailure=yes "\
 "-t -t "\
-"-g -D 1080 "\
+"-g -D ${PROXY_HOSTPORT:=1080} "\
 "-p ${SSH_HOSTPORT:=22} "\
 "${SSH_HOSTUSER}@${SSH_HOSTNAME}"
 
