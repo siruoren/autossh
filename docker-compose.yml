@@ -1,12 +1,12 @@
 version: '3.7'
 services:
-    autossh:
+    socks5:
       build: .
-      image: 'zhuguojun6/autossh:1.0.0'
-      container_name: "autossh"
+      image: 'zhuguojun6/socks5:1.0.1'
+      container_name: "socks5"
       restart: unless-stopped
       privileged: true
-      hostname: 'autossh'
+      hostname: 'socks5'
 
       environment:
         TZ: 'Asia/Shanghai'
