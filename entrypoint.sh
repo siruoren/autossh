@@ -40,8 +40,6 @@ COMMAND="autossh "\
 "-N "\
 "-i ${KEY_FILE} "\
 "-o StrictHostKeyChecking=${STRICT_HOSTS_KEY_CHECKING} ${KNOWN_HOSTS_ARG:=}"\
-"-o ServerAliveInterval=${SERVER_ALIVE_INTERVAL:-10} "\
-"-o ServerAliveCountMax=${SERVER_ALIVE_COUNT_MAX:-3} "\
 "-o ExitOnForwardFailure=yes "\
 "-t -t "\
 "-g -D ${PROXY_HOSTPORT:=1080} "\
